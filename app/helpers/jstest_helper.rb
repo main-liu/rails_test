@@ -1,0 +1,2 @@
+module JstestHelper
+end

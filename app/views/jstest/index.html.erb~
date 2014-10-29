@@ -1,0 +1,36 @@
+<ul>
+    <li>
+	<%= link_to jstest_modify_path(:num=>'100'), :remote => true do%>
+	  		通过:remote => true调用ajax更新num
+	  	<% end %>
+    </li>
+    <li>
+    	<a id="ajax-load" href="#">通过js调用ajax更新num加1('#ajax-load')</a>
+    </li>
+    <li>
+    	<%= link_to "用form通过ajax添加用户",jstest_newuser_path %>
+    </li>
+</ul>
+
+<div id="my">
+	<div id="mydiv">1</div>
+	<div id="mydiv2">苹果</div>
+</div>
+<div id="my2">哈哈</div>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+     
+        $("#ajax-load").click(function(){
+                var n=$("#mydiv").text();
+		$.ajax({
+		    type: 'GET',
+		    url: '/jstest/add.json?num='+n,
+		    data: 'n=55',
+		    success: function(data){
+		    	$("#mydiv").html(data)
+		    }
+		});
+	});
+    });
+</script>

@@ -1,0 +1,17 @@
+<%= form_for(@user,:remote => true,:url => { :action => "updateuser" }) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<div id="user_view">
+	<%=render "user_table" %>
+</div>
