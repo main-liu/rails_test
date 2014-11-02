@@ -1,0 +1,18 @@
+<h1>RedcarpetTest#index</h1>
+<p>Find me in app/views/redcarpet_test/index.html.erb</p>
+<div>
+<%= form_tag({controller: "redcarpet_test", action: "updatetext"},:remote => true) do %>
+  <%= label_tag(:q, "文本r:") %>
+  <%= text_area_tag(:q) %>
+  <%= submit_tag("确定") %>
+
+<% end %>
+</div>
+<hr>
+<div id="show" style="height:334px;">
+<%= raw @html %>
+<div>
+
+
+
+

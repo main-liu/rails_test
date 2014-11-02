@@ -1,5 +1,8 @@
 RailsTest::Application.routes.draw do
 
+  get "redcarpet_test/index"
+  post "redcarpet_test/updatetext"
+
   get "contl_test/index"
 
   get "jstest/index"
